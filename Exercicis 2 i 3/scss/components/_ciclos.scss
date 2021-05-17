@@ -1,0 +1,6 @@
+@import "datos";
+@each $code, $xyz in $animations {
+    @keyframes #{$code} {
+        from {transform: translate3d($xyz);}
+    }
+}
