@@ -18,3 +18,8 @@
     animation-timing-function: ease-out;
     animation-name: $nom;
 }
+@mixin transform($skew, $sX, $sY, $opacity){
+    -webkit-transform: skew($skew) scaleX($sX) scaleY($sY) translate(0, 0);
+        transform: skew($skew) scaleX($sX) scaleY($sY) translate(0, 0);
+        opacity: $opacity;
+}

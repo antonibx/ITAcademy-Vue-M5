@@ -1,5 +1,15 @@
 @import "datos";
-@each $code, $xyz in $animations {
+@import "mixins";
+
+@for $i from 1 through 5 {
+    .strip:nth-child(#{$i}) .strip_content {
+        @include animacio(map-get($colorfranja, "#{$i}"),
+                          map-get($tempsfranja, "#{$i}"),
+                          map-get($nomfranja, "#{$i}"));
+    }
+}
+
+@each $code, $xyz in $animacions {
     @keyframes #{$code} {
         from {transform: translate3d($xyz);}
     }
